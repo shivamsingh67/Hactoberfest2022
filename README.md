@@ -24,7 +24,7 @@
 - C++ STL Notes + Questions are available (pdf downlable)
 - For any kind of Contribution Feel Free to Create an Issue  and respective PR.
 
-## Questions covered 📚
+## Questions covere 📚
 
 - Contest
   - Codechef

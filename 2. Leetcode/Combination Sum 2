@@ -1,0 +1,23 @@
+class Solution {
+public:
+    void Calculate(int target,vector<vector<int>> &stack,vector<int> &arr, vector<int> &ds, int ind){
+        if(target==0){
+            stack.push_back(ds);
+            return;
+        }
+        for(int i=ind;i<arr.size();i++){
+            if(i>ind && arr[i]==arr[i-1] ) continue;
+            if(arr[i]>target) break;
+            ds.push_back(arr[i]);
+            Calculate(target-arr[i],stack,arr,ds,i+1);
+            ds.pop_back();
+        }
+    }
+    vector<vector<int>> combinationSum2(vector<int>& candidates, int target) {
+        sort(candidates.begin(),candidates.end());
+        vector<vector<int>> stack;
+        vector<int> ds;
+        Calculate(target,stack,candidates,ds,0);
+        return stack;
+    }
+};
